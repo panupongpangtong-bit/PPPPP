@@ -1,0 +1,37 @@
+import { Geist, Geist_Mono, Prompt } from "next/font/google";
+import "./globals.css";
+import { CartProvider } from "../../../context/cartcontext";
+
+const prompt = Prompt({
+  subsets: ["thai", "latin"],
+  weight: ["300", "400", "500", "600", "700"],
+  variable: "--font-prompt",
+});
+
+const geistSans = Geist({
+  variable: "--font-geist-sans",
+  subsets: ["latin"],
+});
+
+const geistMono = Geist_Mono({
+  variable: "--font-geist-mono",
+  subsets: ["latin"],
+});
+
+export const metadata = {
+  title: "MoMi Art Shop",
+  description: "ซื้อขายงานศิลปะออนไลน์",
+};
+
+export default function RootLayout({ children }) {
+  return (
+    <html
+      lang="th"
+      className={`${prompt.variable} ${geistSans.variable} ${geistMono.variable}`}
+    >
+      <body className="min-h-screen flex flex-col">
+        <CartProvider>{children}</CartProvider>
+      </body>
+    </html>
+  );
+}
