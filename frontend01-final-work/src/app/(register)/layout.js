@@ -1,7 +1,5 @@
 import { Geist, Geist_Mono } from "next/font/google";
 import { Prompt } from "next/font/google";
-import { CartProvider } from "../../../../context/cartcontext";
-
 
 const prompt = Prompt({
   subsets: ["thai", "latin"],
