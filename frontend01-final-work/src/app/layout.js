@@ -20,7 +20,7 @@ const geistMono = Geist_Mono({
 
 export const metadata = {
   title: "MoMi Art Shop",
-  description: "ซื้อขายงานศิลปะออนไลน์",
+  description: "เลือกผลงานที่เป็นตัวคุณ",
 };
 
 export default function RootLayout({ children }) {
@@ -30,7 +30,9 @@ export default function RootLayout({ children }) {
       className={`${prompt.variable} ${geistSans.variable} ${geistMono.variable}`}
     >
       <body className="min-h-screen flex flex-col">
-        <CartProvider>{children}</CartProvider>
+        <CartProvider>
+          {children}
+        </CartProvider>
       </body>
     </html>
   );
